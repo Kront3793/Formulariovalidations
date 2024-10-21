@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario con Validaciones Personalizadas</title>
+    <link rel="stylesheet" href="Formualrio.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>Registro de Usuario</h1>
+            <form id="registroForm" novalidate>
+                <!-- Número de Documento -->
+                <div class="form-group">
+                    <label for="numeroDocumento">Número de Documento:</label>
+                    <input type="text" id="numeroDocumento" name="numeroDocumento">
+                    <div id="errorNumeroDocumento" class="error"></div>
+                </div>
+
+                <!-- Tipo de Documento -->
+                <div class="form-group">
+                    <label for="tipoDocumento">Tipo de Documento:</label>
+                    <select id="tipoDocumento" name="tipoDocumento" disabled>
+                        <option value="">Seleccione</option>
+                        <option value="cc">Cédula de Ciudadanía</option>
+                        <option value="ti">Tarjeta de Identidad</option>
+                        <option value="ce">Cédula de Extranjería</option>
+                    </select>
+                    <div id="errorTipoDocumento" class="error"></div>
+                </div>
+
+                <!-- Nombre y Apellido -->
+                <div class="form-group">
+                    <label for="nombreApellido">Nombre y Apellido:</label>
+                    <input type="text" id="nombreApellido" name="nombreApellido" disabled>
+                    <div id="errorNombreApellido" class="error"></div>
+                </div>
+
+                <!-- Género -->
+                <div class="form-group">
+                    <label for="genero">Género:</label>
+                    <select id="genero" name="genero" disabled>
+                        <option value="">Seleccione</option>
+                        <option value="masculino">Masculino</option>
+                        <option value="femenino">Femenino</option>
+                        <option value="otro">Otro</option>
+                    </select>
+                    <div id="errorGenero" class="error"></div>
+                </div>
+
+                <!-- Fecha de Nacimiento -->
+                <div class="form-group">
+                    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+                    <input type="date" id="fechaNacimiento" name="fechaNacimiento" disabled>
+                    <div id="errorFechaNacimiento" class="error"></div>
+                </div>
+
+                <!-- Edad -->
+                <div class="form-group">
+                    <label for="edad">Edad:</label>
+                    <input type="number" id="edad" name="edad" disabled readonly>
+                    <div id="errorEdad" class="error"></div>
+                </div>
+
+                <!-- Hobbies -->
+                <div class="form-group">
+                    <label>Hobbies:</label>
+                    <div class="options">
+                        <label>
+                            <input type="radio" id="hobbyDeporte" name="hobby" value="deporte" disabled>
+                            Deporte
+                        </label>
+                        <label>
+                            <input type="radio" id="hobbyMusica" name="hobby" value="musica" disabled>
+                            Música
+                        </label>
+                        <label>
+                            <input type="radio" id="hobbyLectura" name="hobby" value="lectura" disabled>
+                            Lectura
+                        </label>
+                    </div>
+                    <div id="errorHobby" class="error"></div>
+                </div>
+
+                <!-- Habilidades -->
+                <div class="form-group">
+                    <label>Habilidades:</label>
+                    <div class="options">
+                        <label>
+                            <input type="checkbox" id="habilidadProgramacion" name="habilidades" value="programacion" disabled>
+                            Programación
+                        </label>
+                        <label>
+                            <input type="checkbox" id="habilidadDiseño" name="habilidades" value="diseño" disabled>
+                            Diseño
+                        </label>
+                        <label>
+                            <input type="checkbox" id="habilidadMarketing" name="habilidades" value="marketing" disabled>
+                            Marketing
+                        </label>
+                    </div>
+                    <div id="errorHabilidades" class="error"></div>
+                </div>
+
+                <!-- Selección de Color Favorito -->
+                <div class="form-group">
+                    <label for="colorFavorito">Selecciona tu Color Favorito:</label>
+                    <input type="color" id="colorFavorito" name="colorFavorito" required>
+                    <div id="errorColorFavorito" class="error"></div>
+                </div>
+
+                <!-- Número de Teléfono -->
+                <div class="form-group">
+                    <label for="numeroTelefono">Número de Teléfono:</label>
+                    <input type="text" id="numeroTelefono" name="numeroTelefono" disabled>
+                    <div id="errorNumeroTelefono" class="error"></div>
+                </div>
+
+                <!-- Correo Electrónico -->
+                <div class="form-group">
+                    <label for="correoElectronico">Correo Electrónico:</label>
+                    <input type="email" id="correoElectronico" name="correoElectronico" disabled>
+                    <div id="errorCorreoElectronico" class="error"></div>
+                </div>
+
+                <!-- Contraseña -->
+                <div class="form-group">
+                    <label for="contraseña">Contraseña:</label>
+                    <input type="password" id="contraseña" name="contraseña" disabled>
+                    <div id="errorContraseña" class="error"></div>
+                </div>
+
+                <!-- Botones -->
+                <div class="form-actions">
+                    <button type="submit">Registrar</button>
+                    <button type="button" id="btnLimpiar">Limpiar</button>
+                </div>
+                <div id="mensajeExito" class="success"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Enlazar el archivo JavaScript -->
+    <script src="formulario.js"></script>
+</body>
+</html>
